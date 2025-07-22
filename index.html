@@ -1,15 +1,16 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Emmanuel Ministers | Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f9;
+      background: #f9f8fd;
     }
     header {
       background: #6a1b9a;
@@ -20,6 +21,7 @@
     nav {
       background: #4a148c;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       padding: 10px;
@@ -28,6 +30,11 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
+    nav a:hover {
+      background-color: #7b1fa2;
     }
     section {
       padding: 30px;
@@ -38,15 +45,15 @@
       height: auto;
     }
     .chairperson {
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       margin: 20px auto;
       width: 250px;
     }
     .members {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 15px;
       margin-top: 20px;
     }
@@ -63,20 +70,18 @@
       padding: 20px;
       margin-top: 40px;
     }
-    .email-link, .whatsapp-link, .youtube-link {
+    .email-link, .whatsapp-link, .youtube-link, .btn-link {
       display: inline-block;
       padding: 10px 20px;
       color: white;
       border-radius: 6px;
       text-decoration: none;
-      margin: 10px;
+      margin: 10px 5px;
     }
     .email-link { background: #6a1b9a; }
     .whatsapp-link { background: #25d366; }
     .youtube-link { background: #c62828; }
-    .video {
-      margin-top: 30px;
-    }
+    .btn-link { background: #3949ab; }
     .video iframe {
       max-width: 90%;
       height: 315px;
@@ -98,24 +103,33 @@
     }
   </style>
 </head>
-<body><header>
+<body>
+
+<header>
   <h1>Welcome to Emmanuel Ministers</h1>
   <p>Empowered to Serve | Youth with a Vision</p>
-</header><nav>
+</header>
+
+<nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="chat.html">Chat</a>
   <a href="events.html">Events</a>
   <a href="gallery.html">Gallery</a>
+  <a href="quotes.html">Quotes</a>
   <a href="contact.html">Contact</a>
-</nav><section>
+</nav>
+
+<section>
   <h2>Meet Our Chairperson</h2>
-  <img src="1753158379032.jpg" alt="Chairperson" class="chairperson">
+  <img src="1753158379032.jpg" alt="Chairperson" class="chairperson" />
   <p>Our leader, guided by prayer and purpose.</p>
   <a class="whatsapp-link" href="https://wa.me/254102921075" target="_blank">WhatsApp Chairperson</a>
-  <br>
+  <br />
   <a href="mailto:collinshappy326@gmail.com" class="email-link">Email Chairperson</a>
-</section><section>
+</section>
+
+<section>
   <h2>Familiar Members</h2>
   <div class="members">
     <div class="member">Lenox Otieno</div>
@@ -124,21 +138,38 @@
     <div class="member">Livingston</div>
     <div class="member">Collins Odera</div>
     <div class="member">Woud Peter</div>
+    <div class="member">Lydia Simbiri</div>
+    <div class="member">Kennedy</div>
+    <div class="member">Elder Dan Odera</div>
+    <div class="member">Elly Onyango</div>
   </div>
-</section><section class="video">
+</section>
+
+<section class="video">
   <h2>Watch Our Inspiration</h2>
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Emmanuel Video" frameborder="0" allowfullscreen></iframe>
-  <br>
-  <a class="youtube-link" href="https://https://youtube.com/@amenministerskenya?si=8kgUSwH7m9b8To0d" target="_blank">Visit Mzee Kenya YouTube Channel</a>
-</section><section>
+  <iframe src="https://www.youtube.com/embed/gb-i966bP_I" title="Emmanuel Video" frameborder="0" allowfullscreen></iframe>
+  <br />
+  <a class="youtube-link" href="https://youtube.com/@amenministerskenya?si=zEHHzG1LLo97PFLq" target="_blank">Visit Our YouTube Channel</a>
+</section>
+
+<section>
   <h2>Contact Us</h2>
   <a href="mailto:emmanuelminister@gmail.com" class="email-link">Send us an Email</a>
-</section><section>
-  <h2>Features of Our Ministry</h2>
+</section>
+
+<section>
+  <h2>Explore More</h2>
+  <a href="devotion.html" class="btn-link">Devotions</a>
+  <a href="quotes.html" class="btn-link">Inspirational Quotes</a>
+  <a href="donation.html" class="btn-link">Support & Donate</a>
+</section>
+
+<section>
+  <h2>Ministry Features</h2>
   <div class="features">
     <div class="feature">
       <h3>Daily Devotions</h3>
-      <p>We share uplifting scriptures and reflections to keep your spiritual walk strong.</p>
+      <p>Uplifting scriptures and reflections to guide your spiritual walk.</p>
     </div>
     <div class="feature">
       <h3>Prayer Requests</h3>
@@ -146,22 +177,26 @@
     </div>
     <div class="feature">
       <h3>Youth Forums</h3>
-      <p>Interactive sessions to empower, teach, and connect youth with purpose.</p>
+      <p>Interactive discussions to teach and empower young people.</p>
     </div>
     <div class="feature">
       <h3>Media Ministry</h3>
-      <p>Enjoy gospel music, videos, and podcasts created by the team for God’s glory.</p>
+      <p>Enjoy gospel content created for the glory of God.</p>
     </div>
     <div class="feature">
       <h3>Charity Missions</h3>
-      <p>Outreach programs, hospital visits, and giving back to the community.</p>
+      <p>Outreach, hospital visits, and helping the less fortunate.</p>
     </div>
     <div class="feature">
       <h3>Live Fellowships</h3>
-      <p>Join us online or in person for worship, testimonies, and teachings.</p>
+      <p>Worship, testimonies, and teachings both online and in person.</p>
     </div>
   </div>
-</section><footer>
+</section>
+
+<footer>
   <p>&copy; 2025 Emmanuel Ministers. All rights reserved.</p>
-</footer></body>
-</html>
+</footer>
+
+</body>
+    </html>
