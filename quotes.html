@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes & Puzzle | Emmanuel Ministers</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffdf7;
+      margin: 0;
+    }
+    header {
+      background-color: #4a148c;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #4a148c;
+    }
+    .quote-box {
+      background: #f3e5f5;
+      border-left: 6px solid #6a1b9a;
+      margin: 20px 0;
+      padding: 20px;
+      font-style: italic;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .puzzle-section {
+      margin-top: 50px;
+      background-color: #ede7f6;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    .puzzle-section h3 {
+      color: #311b92;
+    }
+    .puzzle-section input {
+      padding: 10px;
+      font-size: 1em;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 400px;
+    }
+    .puzzle-section button {
+      padding: 10px 20px;
+      background-color: #4a148c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    footer {
+      background: #eee;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inspirational Quotes & Puzzle</h1>
+    <p><em>Refresh your soul and sharpen your mind</em></p>
+  </header>  <section>
+    <h2>Daily Inspirational Quotes</h2><div class="quote-box">
+  "Trust in the Lord with all your heart and lean not on your own understanding." <br>
+  — Proverbs 3:5
+</div>
+<div class="quote-box">
+  "I can do all things through Christ who strengthens me." <br>
+  — Philippians 4:13
+</div>
+<div class="quote-box">
+  "Be still, and know that I am God." <br>
+  — Psalm 46:10
+</div>
+<div class="quote-box">
+  "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven." <br>
+  — Matthew 5:16
+</div>
+
+  </section>  <section class="puzzle-section">
+    <h3>🧠 Bible Word Unscramble Puzzle</h3>
+    <p>Unscramble this word: <strong>TSIHRC</strong></p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Check</button>
+    <div class="result" id="result"></div>
+  </section>  <footer>
+    <p>&copy; 2025 Emmanuel Ministers | Keep the faith alive</p>
+  </footer>  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.trim().toUpperCase();
+      const result = document.getElementById('result');
+      if (input === "CHRIST") {
+        result.textContent = "🎉 Correct! Jesus is always the answer.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Try again!";
+        result.style.color = "red";
+      }
+    }
+  </script></body>
+  </html>
