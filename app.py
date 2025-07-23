@@ -18,13 +18,10 @@ def events():
 def gallery():
     return render_template('gallery.html')
 
-@app.route('/chat')
-def chat():
-    return render_template('chat.html')
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/chat')
+def chat():
+    return render_template('chat.html')
