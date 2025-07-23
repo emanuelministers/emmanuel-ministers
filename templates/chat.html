@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat | Emmanuel Ministers</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4527a0;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+    .chat-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chat-box {
+      border: 1px solid #ccc;
+      padding: 15px;
+      height: 200px;
+      overflow-y: scroll;
+      margin-bottom: 20px;
+    }
+    .input-area input {
+      width: 80%;
+      padding: 10px;
+    }
+    .input-area button {
+      padding: 10px;
+      background-color: #4527a0;
+      color: white;
+      border: none;
+    }
+    .extra-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .extra-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #5e35b1;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .extra-buttons a:hover {
+      background-color: #7e57c2;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #eee;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chat Room</h1>
+    <p>Feel free to express love, unity and God's message 💬</p>
+  </header>
+
+  <div class="chat-container">
+    <div class="chat-box" id="chatBox">
+      <p><strong>You:</strong> Hello and welcome to Emmanuel Chat!</p>
+    </div>
+    <div class="input-area">
+      <input type="text" id="messageInput" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="extra-buttons">
+      <h3>More from Us:</h3>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="devotion.html">Devotionals</a>
+      <a href="donation.html">Support / Donate</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Emmanuel Ministers | Built to Uplift God's Name</p>
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const box = document.getElementById('chatBox');
+      if (input.value.trim() !== '') {
+        const msg = document.createElement('p');
+        msg.innerHTML = '<strong>You:</strong> ' + input.value;
+        box.appendChild(msg);
+        box.scrollTop = box.scrollHeight;
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
