@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonies | Emmanuel Ministers</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 36px;
+    }
+    header p {
+      font-size: 18px;
+      font-style: italic;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .highlight-testimony {
+      background-color: #f3e5f5;
+      border-left: 6px solid #8e24aa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .highlight-testimony h2 {
+      color: #6a1b9a;
+    }
+    .form-section, .record-section {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+    .form-section h3, .record-section h3 {
+      color: #4a148c;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .note {
+      font-style: italic;
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #eee;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Testimonies of Grace</h1>
+    <p>“They defeated him by the blood of the Lamb and by the word of their testimony.” — Revelation 12:11</p>
+  </header>  <div class="container">
+    <div class="highlight-testimony">
+      <h2>🌱 From Small Beginnings...</h2>
+      <p>
+        Our ministry was small and only young people were involved, making it hard to raise support. We were unpopular,
+        and sometimes even despised. Our members were scattered in different schools, workplaces, and homes.
+        Yet, through prayer and faith, God kept Emmanuel Ministers alive and made us grow in unity and purpose.
+        This is our first testimony — that God truly blesses small beginnings.
+      </p>
+    </div><div class="form-section">
+  <h3>📝 Submit Your Testimony</h3>
+  <p>Write down how God has worked in your life. Encourage others!</p>
+  <textarea placeholder="Your testimony here..."></textarea>
+  <button>Submit (not functional)</button>
+  <p class="note">Note: Testimonies must be sincere, respectful, and God-glorifying. We'll review before sharing.</p>
+</div>
+
+<div class="record-section">
+  <h3>🎙️ Record Your Voice Testimony</h3>
+  <p>Prefer to speak your story? You can record and download it.</p>
+  <button onclick="startRecording()">Start Recording</button>
+  <button onclick="stopRecording()">Stop & Save</button>
+  <p id="recordingStatus">Recording not started.</p>
+</div>
+
+  </div>  <footer>
+    <p>&copy; 2025 Emmanuel Ministers | Sharing His Goodness</p>
+  </footer>  <script>
+    let mediaRecorder;
+    let audioChunks = [];
+
+    async function startRecording() {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.start();
+      document.getElementById('recordingStatus').textContent = 'Recording...';
+
+      mediaRecorder.ondataavailable = event => {
+        audioChunks.push(event.data);
+      };
+
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/mpeg' });
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const a = document.createElement('a');
+        a.href = audioUrl;
+        a.download = 'testimony.mp3';
+        a.textContent = '🎧 Download Your Testimony';
+        document.querySelector('.record-section').appendChild(a);
+        document.getElementById('recordingStatus').textContent = 'Recording stopped.';
+      };
+    }
+
+    function stopRecording() {
+      if (mediaRecorder) {
+        mediaRecorder.stop();
+      }
+    }
+  </script></body>
+</html>
