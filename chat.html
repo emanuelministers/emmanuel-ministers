@@ -3,118 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat | Emmanuel Ministers</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Emmanuel Chat Room</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5ff;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e5ddd5;
     }
+
     header {
-      background-color: #4527a0;
+      background-color: #075E54;
       color: white;
-      text-align: center;
-      padding: 30px 10px;
-    }
-    .chat-container {
-      max-width: 800px;
-      margin: 40px auto;
       padding: 20px;
-      background-color: #fff;
+      text-align: center;
+    }
+
+    .chat-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
     }
+
     .chat-box {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
       border: 1px solid #ccc;
-      padding: 15px;
-      height: 200px;
-      overflow-y: scroll;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
     }
+
+    .message {
+      max-width: 75%;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      clear: both;
+    }
+
+    .user-message {
+      background-color: #DCF8C6;
+      float: right;
+      text-align: right;
+    }
+
+    .other-message {
+      background-color: #ffffff;
+      float: left;
+      text-align: left;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+    }
+
     .input-area input {
-      width: 80%;
+      flex: 1;
       padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
     }
+
     .input-area button {
-      padding: 10px;
-      background-color: #4527a0;
-      color: white;
+      padding: 10px 20px;
       border: none;
-    }
-    .chat-link {
-      text-align: center;
-      margin: 40px 0 20px;
-    }
-    .chat-link a {
-      background-color: #6a1b9a;
-      color: #fff;
-      font-size: 22px;
+      border-radius: 20px;
+      background-color: #25D366;
+      color: white;
       font-weight: bold;
-      text-decoration: none;
-      padding: 16px 32px;
-      border-radius: 12px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
     }
-    .chat-link a:hover {
-      background-color: #8e24aa;
+
+    .input-area button:hover {
+      background-color: #128C7E;
     }
+
     .extra-buttons {
-      margin-top: 30px;
       text-align: center;
+      margin-top: 20px;
     }
+
     .extra-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background-color: #5e35b1;
+      margin: 8px;
+      padding: 10px 20px;
+      background-color: #075E54;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
     }
-    .extra-buttons a:hover {
-      background-color: #7e57c2;
-    }
+
     footer {
       text-align: center;
-      padding: 30px;
-      background-color: #eee;
-      margin-top: 50px;
+      padding: 15px;
+      font-size: 14px;
+      background-color: #ece5dd;
+    }
+
+    .redirect-link {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .redirect-link a {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #128C7E;
+      padding: 12px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .redirect-link a:hover {
+      background-color: #075E54;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Chat Room</h1>
-    <p>Feel free to express love, unity and God's message 💬</p>
+    <h1>Emmanuel Chat Room</h1>
+    <p>Connect and grow together in Christ 💬</p>
   </header>
 
   <div class="chat-container">
     <div class="chat-box" id="chatBox">
-      <p><strong>You:</strong> Hello and welcome to Emmanuel Chat!</p>
+      <!-- Example messages -->
+      <div class="message user-message"><strong>You:</strong> Hello and welcome!</div>
+      <div class="message other-message"><strong>Mercy:</strong> Praise God! 🙏</div>
     </div>
+
     <div class="input-area">
       <input type="text" id="messageInput" placeholder="Type your message...">
       <button onclick="sendMessage()">Send</button>
     </div>
 
-    <!-- Link to full-stack chat -->
-    <div class="chat-link">
-      <a href="https://emmanuel-chat-4.onrender.com" target="_blank">Go to Full Chat App 🚀</a>
+    <div class="redirect-link">
+      <a href="https://emmanuel-chat-4.onrender.com" target="_blank">🔗 Go to Full Chat</a>
     </div>
 
     <div class="extra-buttons">
-      <h3>More from Us:</h3>
       <a href="testimonies.html">Testimonies</a>
-      <a href="devotion.html">Devotionals</a>
-      <a href="donation.html">Support / Donate</a>
+      <a href="devotion.html">Devotions</a>
+      <a href="donation.html">Donate</a>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 Emmanuel Ministers | Built to Uplift God's Name</p>
+    &copy; 2025 Emmanuel Ministers — Powered by Faith & Fellowship
   </footer>
 
   <script>
@@ -122,9 +167,10 @@
       const input = document.getElementById('messageInput');
       const box = document.getElementById('chatBox');
       if (input.value.trim() !== '') {
-        const msg = document.createElement('p');
-        msg.innerHTML = '<strong>You:</strong> ' + input.value;
-        box.appendChild(msg);
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message', 'user-message');
+        msgDiv.innerHTML = '<strong>You:</strong> ' + input.value;
+        box.appendChild(msgDiv);
         box.scrollTop = box.scrollHeight;
         input.value = '';
       }
