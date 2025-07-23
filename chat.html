@@ -43,6 +43,24 @@
       color: white;
       border: none;
     }
+    .chat-link {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+    .chat-link a {
+      background-color: #6a1b9a;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 12px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .chat-link a:hover {
+      background-color: #8e24aa;
+    }
     .extra-buttons {
       margin-top: 30px;
       text-align: center;
@@ -80,6 +98,11 @@
     <div class="input-area">
       <input type="text" id="messageInput" placeholder="Type your message...">
       <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Link to full-stack chat -->
+    <div class="chat-link">
+      <a href="https://emmanuel-chat-4.onrender.com" target="_blank">Go to Full Chat App 🚀</a>
     </div>
 
     <div class="extra-buttons">
